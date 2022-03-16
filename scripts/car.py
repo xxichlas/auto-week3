@@ -90,7 +90,7 @@ def main(argv):
   subject = "Sales summary for last month"
   body = "\n".join(summary)
 
-  message = emails.generate(sender, receiver, subject, body, "/tmp/cars.pdf")
+  message = emails.generate(sender, receiver, subject, body, "/tmp/cars3.pdf")
   emails.send(message)
 
 if __name__ == "__main__":

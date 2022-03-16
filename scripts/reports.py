@@ -4,8 +4,7 @@ from reportlab.platypus import SimpleDocTemplate
 from reportlab.platypus import Paragraph, Spacer, Table, Image
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib import colors
-from reportlab.graphics.shapes import Drawing
-from reportlab.graphics.charts.piecharts import Pie
+
 
 def generate(filename, title, additional_info, table_data):
   styles = getSampleStyleSheet()
@@ -17,9 +16,6 @@ def generate(filename, title, additional_info, table_data):
                 ('ALIGN', (0,0), (-1,-1), 'CENTER')]
   report_table = Table(data=table_data, style=table_style, hAlign="LEFT")
   empty_line = Spacer(1,20)
-  report_chart = Drawing()
-  report_pie = Pie(width=3*inch, height=3*inch)
-  report_pie.data = []
-  report_pie.labels = []
+
 
   report.build([report_title, empty_line, report_info, empty_line, report_table])
